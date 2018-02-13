@@ -1,0 +1,307 @@
+@import "../sass/variables"
+@import "../sass/mixins"
+@import "../sass/plugins/plugins-dir"
+@import "../sass/navigation"
+
+body
+  font: 400 15px $mainfont
+  font-size: 15px
+  line-height: 1.8
+  background-color: $black
+  color: $white
+  overflow: hidden
+
+h2
+  font-size: 40px
+  text-transform: uppercase
+  color: $white
+  font-weight: 600
+  margin-bottom: 30px
+  text-align: center
+  font-family: $headerfont
+
+h4
+  font-size: 24px
+  line-height: 1.375em
+  color: $black
+  font-weight: bold
+  font-family: $headerfont
+
+.jumbotron
+  +jumbo(#fff, no-repeat, center, url('../images/BSG2.png'), 100vh)
+  width: 100%
+  margin: 0 auto
+
+#arrow a span
+  +arrow(absolute, 15%, 50%, 24px, 24px, 1, (-12px))
+  border-left: 3px solid $black
+  border-bottom: 3px solid $black
+  -webkit-transform: rotate(-45deg)
+  transform: rotate(-45deg)
+  -webkit-animation: sdb04 2s infinite
+  animation: sdb04 2s infinite
+  box-sizing: border-box
+
+@-webkit-keyframes sdb04
+  0%
+    -webkit-transform: rotate(-45deg) translate(0, 0)
+
+  20%
+    -webkit-transform: rotate(-45deg) translate(-10px, 10px)
+
+  40%
+    -webkit-transform: rotate(-45deg) translate(0, 0)
+
+
+@keyframes sdb04
+  0%
+    transform: rotate(-45deg) translate(0, 0)
+
+  20%
+    transform: rotate(-45deg) translate(-10px, 10px)
+
+  40%
+    transform: rotate(-45deg) translate(0, 0)
+
+.container-fluid
+  margin: 0 auto
+  padding-top: 60px
+  max-width: 100%
+
+.col-sm-8
+  +col8(1000px, 0 auto, none, justify, 100vh, 50px)
+
+.col-sm-5
+  +col5(none, 100%, 0 auto, center, 50vh)
+  width: 100%
+
+.contactheader
+  //margin-top: 10px
+
+.col-sm-6
+  +col6(100%, hidden)
+  //border: solid 1px $white
+  height: 100vh
+  overflow: hidden
+  margin: 0 auto
+
+
+.bg-black
+  background-color: $black
+
+.modal .modal-body
+  overflow-y: auto
+  max-height: 400px
+  color: $black
+  margin: auto
+
+#carousel
+  margin: 0 auto
+  +carous(90%, auto, 50vh, auto, 10vh, 0, 0, 0)
+  max-width: 90%
+  //background-color: $lightgray
+  //border: outset 5px $gray
+  //display: flex
+  //display: none
+
+.col-sm-6 img,
+.imagelink
+  max-height: 100%
+  max-width: 100%
+  +cardpic(200px, 100%)
+  margin: 0 auto
+  &:hover
+    opacity: 0.5
+    //zoom: 110%
+
+.card
+  text-align: center
+  display: inline-block
+  //border: groove 5px $gray
+  //box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.7)
+  height: 350px
+  max-height: 350px
+  width: 280px
+  max-width: 280px
+  margin: 0 auto
+  //display: inline-block
+  //+cardmargin(10px)
+  //margin-left: 10px
+  //margin-top: 5px
+  //margin-bottom: 5px
+  //margin: 0 auto
+  color: $black
+  background-color: $white
+
+.cardcontainer
+  padding: 0 16px
+  //height: 20vh
+  //background-color: $lightgray
+  //box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.9);
+
+.cardtitle
+  color: $gray
+  font-size: 18px
+
+.carda
+  text-decoration: none
+  font-size: 22px
+  color: $black
+  &:hover
+    text-decoration: underline
+    color: $black
+
+.contact
+  &:link
+    color: $yellow
+    text-decoration: none
+  &:hover
+    //color: #yellow
+    text-decoration: underline
+    text-decoration-style: solid
+  &:visited
+    color: #yellow
+    text-decoration: none
+
+.company
+  cursor: default
+  &:link
+    color: $white
+    text-decoration: none
+  &:hover
+    color: $white
+    text-decoration: none
+  &:visited
+    color: $white
+    text-decoration: none
+
+.container
+  color: $white
+  width: 100%
+  margin: 0 auto
+  position: relative
+
+.container h3
+  font-family: $headerfont
+
+.thumbnail
+  background-color: $black
+  margin: 0 auto
+  border: hidden
+
+#subBtn
+  color: $black
+  background-color: $yellow
+  font-weight: bold
+  //box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.7)
+  &:hover
+    background-color: $white
+
+.textfield
+  width: 50%
+  color: $black
+  text-align: center
+  height: 35px
+  margin-right: 20px
+
+footer .glyphicon
+  font-size: 20px
+  margin-bottom: 20px
+  color: $white
+
+#copyright
+  text-align: center
+  font-size: 13px
+
+.slideanim
+  visibility: hidden
+
+.slide
+  animation-name: slide
+  -webkit-animation-name: slide
+  animation-duration: 1s
+  -webkit-animation-duration: 1s
+  visibility: visible
+
+.fa
+  +fa(10px, 30px, 50px, 50px, center, none)
+  &:hover
+    opacity: 0.9
+    text-decoration: none
+  &:visited
+    text-decoration: none
+    opacity:  1.0
+  &:link
+    text-decoration: none
+    opacity: 1.0
+
+.fa-facebook
+  +fbBtn(#3B5998, #fff)
+
+.fa-linkedin
+  +linkedInBtn(#007bb5, #fff)
+
+@keyframes slide
+  0%
+    opacity: 0
+    transform: translateY(70%)
+
+  100%
+    opacity: 1
+    transform: translateY(0%)
+
+@-webkit-keyframes slide
+  0%
+    opacity: 0
+    -webkit-transform: translateY(70%)
+
+  100%
+    opacity: 1
+    -webkit-transform: translateY(0%)
+
+@media screen and (max-width: 768px)
+
+  h2
+    margin-bottom: 0
+
+  .col-sm-4
+    text-align: center
+    margin: 0
+    margin-bottom: 20px
+
+  .col-sm-5
+    text-align: center
+    margin: 0
+    margin-bottom: 20px
+
+  .col-sm-6
+    margin: 0 auto
+    margin-bottom: 20px
+
+  .crewheader
+    padding-top: 50px
+    margin-bottom: 20px
+
+  .container-fluid
+    padding-top: 0
+
+  #carousel
+    margin: 0 auto
+    padding: 0px
+
+  .textfield
+    width: 100%
+
+  #subBtn
+    margin-top: 20px
+
+  #arrow a span
+    bottom: 5%
+
+@media screen and (max-width: 360px)
+  .jumbotron
+    background-size: 100%
+
+  #carousel
+    margin: 0 auto
+    padding: 0px
